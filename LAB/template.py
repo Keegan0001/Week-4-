@@ -19,6 +19,26 @@ Delete these instructions as you replace them with your code.
 #    nothing outside it should contain a print() of its own. Give each a
 #    one-line docstring.
 
+def check_record(value, limit):
+    """Calculate and return the difference, percentage, and status compared to the limit."""
+    difference = value - limit
+    percent = (value / limit) * 100 if limit != 0 else 0
+    
+    if value > limit:
+        status = "Over"
+    elif value < limit:
+        status = "Under"
+    else:
+        status = "Equal"
+        
+    return difference, percent, status
+
+def print_report(difference, percent, status):
+    """Print the formatted report based on the provided record data."""
+    print(f"Difference: {difference}")
+    print(f"Percent: {percent:.2f}%")
+    print(f"Status: {status}")
+
 # your function(s) go here
 
 
